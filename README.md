@@ -40,4 +40,4 @@ In combat, choose either `Fight` or `Defend` or `Move` (escaping).
 
 ## Contributing:
 
-If you want to add translations, feel free to add your language in `assets/i18n`.
+If you want to add translations, feel free to add your language in [`rebirth/assets/i18n`](rebirth/assets/i18n). Rename as f"text.{your_lang}.yml".
