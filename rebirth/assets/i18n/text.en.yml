@@ -1,0 +1,128 @@
+en:
+    heading:
+        health: Health
+        time: Played Time
+    location:
+        bedroom:
+            first: You are in a bedroom… unfamiliar bedroom. I don’t know why you are here. Wait… you don’t know anything. “Who am I?”, said yourself. You cannot feel anything but a terrible smell. Through the window, you see a lake far away. Let's get there then!
+            default: You woke up here, on the floor. You have no idea where this is, but definitely not your home. Shouldn’t stay here long, you think. There are more for you to discover outside.
+        kitchen:
+            first: From the bedroom, you go into the kitchen. A wind comes, and something gets dropped on the ground. That catches your attention. “Whose house is this, because the paper seems new!” Maybe you have to leave fast or someone will come back. Or you should wait here till they come, and thank them… You don’t know what to do. Let’s read the paper, then?
+            default: This is a kitchen, a great place to rest. Bottles on the counter, and you know you should touch none. There are a total of 3 doors leading to other rooms, including the bedroom you just got out of. One to the inside, already got locked, and one to outside, a backdoor. 
+            newspaper: This is a newspaper. “Incredible! Marvelous beyond compare! None can rightly convey this wondrous feat! Our most sagacious magi have most triumphantly conjured Outsiders, mortals from realms unknown. Henceforth, the triumph is most indubitable!”, as you summarize it. An idea pops into your head. "Am I one of the Outsiders?"
+        forest:
+            first: Outside the house, you finally feel the fresh air. That smell is still here, but at least you can forget it. Suddenly, a moaning sound appears somewhere. A zombie! That thing is real? The zombie goes toward you. You have nothing to fight with, but to throw punches. Wait, its leg seems weak!
+            default: That zombie prevents you from getting farther. If only you can do something with its legs.
+            fight:
+                0: “Hah! Ya missed ain’t ya? Dumb zombie.” “Grrrr.”
+                1: You got hurted, damn it! Let’s finish this, do a low kick!
+            defend:
+                0: You blocked the hit. Now you feel stronger!
+                1: You failed to block it. “Ouch.” The craw got on your face.
+                2: You dodged, easy!
+                3: You failed to dodge, and got yourself hurted.
+                4: “No! No!” You failed the dodge. Know what? You cannot move, and got bitten twice.
+            after: You killed the zombie with your bare hand. There are lots of trees, too many that you cannot count. Sleep there and you can forget everything, even your own life. Wait, you already forgot it, aren’t you? You smile. You feel nothing but emptiness.
+        camp:
+            first: The tent looks old. “Some adventure has left it here”. Look inside, you find yourself a newspaper and a scribble note. Maybe these items will help you remember something. You still want to get rid of this smell as soon as possible though.
+            default: A forgotten camp that once belonged to adventurers.
+            newspaper: “Prithee, keep thine eyes peeled! The King hath vanished!” That’s the title. If only you were a king. And, there is one way to find out, get to the castle! You don’t know why but you believe the end of your journey will be there.
+            note: The note is written scribbly. “I am no King, but a normal person. Only my strength is beyond comparison. That’s why I'm leaving. Dear God, I give you my soul, and please let me out of this miserable world.”
+        graveyard:
+            first: Too brave to get yourself here? The chilling gets on your spine, you feel like being watched. Many, many tombs that belong to those unfortunate. You see a zombie far away. Should you get in there? What a terrible idea! At that moment, the zombie sees you and runs toward you. Act fast! His belly is rotten, maybe you can break some ribs.
+            default: There you are, zombie! Break his ribs and he will fall down.
+            fight:
+                0: You are able to block it. Try again and kill him!
+                1: You got hit. That hurts…
+            defend:
+                0: You blocked the hit successfully.
+                1: “Damn”. You are unable to block it.
+                2: You dodged. “Loser!”
+                3: Too slow! It hits you.
+                4: “Didn’t see that coming… Ahhh!” You hit a tomb while rolling.
+            after: Now, the graveyard is not dangerous anymore. The atmosphere hasn’t changed a bit, but you feel peaceful. This is a place where you will be buried one day.
+        tomb:
+            first: Tombs are made of stone, but this one is only a protuberance of dirt. You find a sword on it, and a crown next to. That must be the Excalibur. You want to pull out the Excalibur. However, you cannot pull it out... You. Are. Not. Worthy… Enough?
+            default: A tomb belongs to the only worthy mortal.
+            crown: You put it on, now you feel badass.
+        lake:
+            first: Eventually, you find the like. But the whole 3 zombies appear to stop you. That is too dangerous! But the smell is unbearable. Fight or Smell, choose it! The first one on the left is normal, it doesn’t seem to have any weakness. The second one in the middle has a broken head. The third one feels like it’s going to fall. You have a bad feeling about this.
+            default: Nice one, zombies, now die! You remember that the first seems normal, the second has a broken head, the third walks wobbly, unstably.
+            fight:
+                0: “Your mama is too big.” “Grr?” “I need 2 speeches to deliver.”
+                1: That hurts, son.
+                2: You killed the zombie, and the next one is coming at you.
+            defend:
+                0: You blocked it.
+                1: “Chill out!” “Grrrr!”
+                2: You dodged.
+                3: “How?” Its craw is able to cut your arm.
+                4: “Welp, good game.” You roll into the lake and get hurted while escaping.
+            after: You did it! You kill all zombies with your fists. Now the lake is yours with no interruption. 
+            clean: Finally, you can get rid of the smell! You go toward it to clean yourself, until you notice your face. It’s strange! That’s a skull with little skins covered. Disgusting! You… are already dead.
+        road:
+            first: That fight earlier was tough, you don’t think you can win anymore fights. If only someone comes up and helps you. “This world sucks!” said a boy. “They say we are outsiders? How ridiculous!”. You take a look at the main road, a group of boys and girls are walking down. You have a really bad feeling about this. Should you really go and meet them?
+            default: That is a group of Outsiders. You don’t know if you should greet them or not.
+            greet: “What?” The tanker gets his sword out and stares at you. “Die! Monster! Ahhhh!”
+            fight:
+                0: You successfully land a hit on him.
+                1: “Ouch”. You got hurted.
+                2: “Get behind, my turn.” another Outsider comes up to you. 
+            defend:
+                0: “I don’t want to fight!” “Stop growling, you little zombie!”
+                1: You tried to block, but unfortunately failed.
+                2: “Listen!” It seems like they don’t really care what you are saying.
+                3: You’re rolling, but fast enough.
+                4: “I hate myself.” You hit a tree.
+        castle:
+            first: Through a long journey, you are there, the castle. You don’t know why you go here, but you want to. As if something pulls you here. At the gate, a figure with a hidden face sees you. For some reason, you feel the familiar scent. “What are you?” the figure asks me with a soft voice.
+    control:
+        inspect: Inspect
+        note: Read the Note
+        newspaper: Read the Newspaper
+        clean: Clean Yourself
+        crown: Wear the Crown
+        outsiders: Greet Them
+        opt_unknown: I don't know
+        opt_king: A king
+        opt_outsider: An Outsider
+        opt_zombie: A zombie
+        #===
+        move: Move
+        bedroom: Bedroom
+        kitchen: Kitchen
+        forest: The Forest
+        camp: Uninhabited Camp
+        graveyard: Graveyard
+        tomb: Tomb of Legend
+        lake: Lake
+        road: Main Road
+        castle: The Castle
+        #===
+        fight: Fight
+        jab: Jab
+        uppercut: Uppercut
+        kick: Low Kick
+        #===
+        defend: Defend
+        block: Block
+        dodge: Dodge
+    start:
+        play:
+            heading: Play
+            content: Welcome to Rebirth, ASCII Python game made by Linos.
+        reset:
+            heading: Reset
+            content: The setting file has been reset. Now you can retry from the beginning.
+        guide:
+            heading: Guide
+            content: Use arrow keys to select options. Use `Enter` to confirm option.
+        exit:
+            heading: Exit
+    ending:
+        0: You died. No exception. You died.
+        1: You have no idea. You just want to get here as fast as you can. You don’t know. Seeing you like that, that figure stabs you in the heart. “Please, next time, answer me.”
+        2: Yes, you think so. There is no way you can be wrong. Until when you realize, you’re dying. You got stabbed, and fell to the ground. “No”, she replies.
+        3: “I am… a zombie.” The figure ran toward you, so fast that the wind uncovered her hood. “At least you know now.” A dagger in her hand stabs you. “Why…?” “You will spawn again. Trust me, and discover who you truly are.”
+        4: You wake up. That was a long sleep. “You’re awake?” A woman sits next to you, smiles. “Now! Who are you?” “A zombie.” “Not that, dumbhead!” She leads you outside, to a tomb with a sword on it. “Pull it out.” She demands. When you pull out, a light dusk covers you and her. “Two divided souls have found their way back.” You gradually lose your consciousness.
+        5: “What have I done…” You killed all three of them, those are called heroes. Now the only thing waiting for you is none but destruction of the kingdom. A figure behind you, wearing a cloak. She removes the hood, and looks at you furiously. She is too fast, stab you in a moment. You are dying. The sword is black. A black Excalibur in her hand.

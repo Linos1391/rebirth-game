@@ -1,0 +1,22 @@
+                                                         
+ X                                           X           
+                X          X       X        XXX          
+         X                XXX                X           
+        XXX                X                 X       X   
+         X        X        X              XXXXXXX        
+         X              XXXXXXX          XX      X       
+      XXXXXXX          XX      X        XX  XXX  X       
+     XX      X        XX  XXX  X        XX  XXX  X       
+    XX  XXX  X        XX  XXX  X        XX       X       
+    XX  XXX  X        XX       X        XX  XXX  X       
+    XX       X        XX  XXX  X        XX       X       
+    XX  XXX  X        XX       X        XXXXXXXXXXX      
+    XX       X        XXXXXXXXXXX        XXXXXXXXXXX     
+    XXXXXXXXXXX        XXXXXXXXXXX        XXXXXXXXXXX    
+     XXXXXXXXXXX        XXXXXXXXXXX        XXXXXXXXXXX   
+      XXXXXXXXXXX        XXXXXXXXXXX        XXXXXXXXXXX  
+ X     XXXXXXXXXXX        XXXXXXXXXXX        XXXXXXXXXXX 
+        XXXXXXXXXXX        XXXXXXXXXXX                   
+         XXXXXXXXXXX                       X             
+                         X                               
+                                                       X 
