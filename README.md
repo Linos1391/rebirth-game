@@ -4,7 +4,7 @@
 
 ![icon](rebirth.png)
 
-**PYTHON ASCII AME**
+**PYTHON ASCII GAME**
 
 </div>
 
@@ -30,7 +30,10 @@ There are total 5 endings (2 are hidden).
 Use arrow keys to choose options. Then press `Enter` to confirm.
 - `Up` & `Down` to move up and down
 - `Left` & `Right` to to show and unshow child options.
+
 **Notice:** If you cannot choose, that means it is not suppose to be chosen. Try `Right` or select another one.
+
+
 
 In combat, choose either `Fight` or `Defend` or `Move` (escaping).
 - `Fight`: If you choose the right style, you can one hit for enemy.
@@ -40,4 +43,4 @@ In combat, choose either `Fight` or `Defend` or `Move` (escaping).
 
 ## Contributing:
 
-If you want to add translations, feel free to add your language in [`rebirth/assets/i18n`](rebirth/assets/i18n). Rename as f"text.{your_lang}.yml".
+If you want to add translations, feel free to add your language in [`rebirth/assets/i18n`](rebirth/assets/i18n) as a pull request. Rename as f"text.{your_lang}.yml".
