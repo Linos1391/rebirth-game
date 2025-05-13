@@ -1,7 +1,9 @@
 <div align="center">
 
 # REBIRTH
+
 ![icon](rebirth.png)
+
 **PYTHON ASCII AME**
 
 </div>
