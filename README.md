@@ -16,10 +16,24 @@ I made this game initially for my school project. And I think everyone should tr
 
 There are total 5 endings (2 are hidden).
 
+<details>
+<summary>
+
+## Ingame Screenshot
+
+</summary>
+
+![0](screenshot/0.png)
+![1](screenshot/1.png)
+![2](screenshot/2.png)
+![3](screenshot/3.png)
+
+</details>
+
 <br>
 
 ## Requirements:
-- Be a window user.
+- Be a Window user.
 - Terminal size minimum is 80x24.
 - Have fun.
 
@@ -34,7 +48,7 @@ Use arrow keys to choose options. Then press `Enter` to confirm.
 **Notice:** If you cannot choose, that means it is not suppose to be chosen. Try `Right` or select another one.
 
 In combat, choose either `Fight` or `Defend` or `Move` (escaping).
-- `Fight`: If you choose the right style, you can one hit for enemy.
+- `Fight`: If you choose the right style, you can one hit your enemy.
 - `Defend`: There are two options `Block` and `Dodge`. `Block` has 50% success. `Dodge` has 75% success, but when failed, has 10% lose 2hp.
 
 <br>
