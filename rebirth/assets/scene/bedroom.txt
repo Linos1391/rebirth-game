@@ -1,22 +1,22 @@
                                                          
-                        XXXXXXXXXXXXXXX                  
-                        X      X      X                  
-                        X      X      X                  
-                        XXXXXXXXXXXXXXX                  
-                        X      X      X                  
-                        X      X      X                  
-                        XXXXXXXXXXXXXXX                  
-      XXXXXXXXXXX                                 XX     
-     XXXXXXXXXXXX                                XXX     
-     X         XX                                XXX     
-     X   XXX   XX                                XXX     
-     X         XX                                XXX     
-     XXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXX     
-     X         XX          XXXXXXXXXXXXXXXXXXXXXXXXX     
-     X   XXX   XX          X  X                  X X     
-     X         XX          X  X                  X X     
-     XXXXXXXXXXX           X  X                  X X     
-                           X                     X       
+                         _____________                   
+                        |      |      |                  
+                        |      |      |                  
+                        |______|______|                  
+                        |      |      |                  
+                        |      |      |                  
+                        |______|______|          __      
+      __________                                |  \     
+     /_________/|                               |  |     
+     |         ||                               |  |     
+     |  --O--  ||                           ____|  |     
+     |         ||           _______________|____|__|     
+     |_________||          |                       |     
+     |         ||          |_______________________|     
+     |  --O--  ||          || ||               || ||     
+     |         |/          || ||               || ||     
+     |_________/           || ||               || ||     
+                           ||                  ||        
                                                          
                                                          
                                                          
