@@ -16,6 +16,9 @@ I made this game initially for my school project. And I think everyone should tr
 
 There are total 5 endings (2 are hidden).
 
+
+<br>
+
 <details>
 <summary>
 
