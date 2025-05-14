@@ -1,14 +1,15 @@
 en:
+    lang: English
     heading:
         health: Health
         time: Played Time
     location:
         bedroom:
-            first: You are in a bedroom… unfamiliar bedroom. I don’t know why you are here. Wait… you don’t know anything. “Who am I?”, said yourself. You cannot feel anything but a terrible smell. Through the window, you see a lake far away. Let's get there then!
+            first: You are in a bedroom… unfamiliar bedroom. You don’t know why you are here. Wait… you don’t know anything. “Who am I?”, said yourself. You cannot feel anything but a terrible smell. Through the window, you see a lake far away. Let's get there then!
             default: You woke up here, on the floor. You have no idea where this is, but definitely not your home. Shouldn’t stay here long, you think. There are more for you to discover outside.
         kitchen:
             first: From the bedroom, you go into the kitchen. A wind comes, and something gets dropped on the ground. That catches your attention. “Whose house is this, because the paper seems new!” Maybe you have to leave fast or someone will come back. Or you should wait here till they come, and thank them… You don’t know what to do. Let’s read the paper, then?
-            default: This is a kitchen, a great place to rest. Bottles on the counter, and you know you should touch none. There are a total of 3 doors leading to other rooms, including the bedroom you just got out of. One to the inside, already got locked, and one to outside, a backdoor. 
+            default: This is a kitchen, a great place to rest. Bottles on the counter, and you know you should touch none. There are a total of 3 doors leading to other rooms, including the bedroom you just got out of. One to inside, already got locked, and one to outside, a backdoor.
             newspaper: This is a newspaper. “Incredible! Marvelous beyond compare! None can rightly convey this wondrous feat! Our most sagacious magi have most triumphantly conjured Outsiders, mortals from realms unknown. Henceforth, the triumph is most indubitable!”, as you summarize it. An idea pops into your head. "Am I one of the Outsiders?"
         forest:
             first: Outside the house, you finally feel the fresh air. That smell is still here, but at least you can forget it. Suddenly, a moaning sound appears somewhere. A zombie! That thing is real? The zombie goes toward you. You have nothing to fight with, but to throw punches. Wait, its leg seems weak!
@@ -46,7 +47,7 @@ en:
             default: A tomb belongs to the only worthy mortal.
             crown: You put it on, now you feel badass.
         lake:
-            first: Eventually, you find the like. But the whole 3 zombies appear to stop you. That is too dangerous! But the smell is unbearable. Fight or Smell, choose it! The first one on the left is normal, it doesn’t seem to have any weakness. The second one in the middle has a broken head. The third one feels like it’s going to fall. You have a bad feeling about this.
+            first: Eventually, you find the lake. But the whole 3 zombies appear to stop you. That is too dangerous! But the smell is unbearable. Fight or Smell, choose it! The first one on the left is normal, it doesn’t seem to have any weakness. The second one in the middle has a broken head. The third one feels like it’s going to fall. You have a bad feeling about this.
             default: Nice one, zombies, now die! You remember that the first seems normal, the second has a broken head, the third walks wobbly, unstably.
             fight:
                 0: “Your mama is too big.” “Grr?” “I need 2 speeches to deliver.”
@@ -67,7 +68,7 @@ en:
             fight:
                 0: You successfully land a hit on him.
                 1: “Ouch”. You got hurted.
-                2: “Get behind, my turn.” another Outsider comes up to you. 
+                2: “Get behind, my turn.” Another Outsider comes up to you. 
             defend:
                 0: “I don’t want to fight!” “Stop growling, you little zombie!”
                 1: You tried to block, but unfortunately failed.
@@ -110,16 +111,17 @@ en:
     start:
         play:
             heading: Play
-            content: Welcome to Rebirth, ASCII Python game made by Linos.
+            content: Welcome to Rebirth, a Python ASCII game made by Linos. Use arrow keys to select options. Use `Enter` to confirm option.
         reset:
             heading: Reset
             content: The setting file has been reset. Now you can retry from the beginning.
-        guide:
-            heading: Guide
-            content: Use arrow keys to select options. Use `Enter` to confirm option.
+        language:
+            heading: Language
         exit:
             heading: Exit
     ending:
+        heading: ENDING
+        continue: Press any key to continue.
         0: You died. No exception. You died.
         1: You have no idea. You just want to get here as fast as you can. You don’t know. Seeing you like that, that figure stabs you in the heart. “Please, next time, answer me.”
         2: Yes, you think so. There is no way you can be wrong. Until when you realize, you’re dying. You got stabbed, and fell to the ground. “No”, she replies.
