@@ -145,8 +145,9 @@ def display_start(stdscr: curses.window):
                         variables.currentNarrative = "text.start.reset.content"
                         variables.fixed_setting("reset")
                     case 2:
-                        i18n.set("locale", langs[chosen[1]])
-                        variables.currentNarrative = "text.start.play.content"
+                        if chosen[1] != -1:
+                            i18n.set("locale", langs[chosen[1]])
+                            variables.currentNarrative = "text.start.play.content"
                     case 3:
                         variables.isPlaying = True
                         variables.isExit = True
