@@ -145,9 +145,10 @@ def display_start(stdscr: curses.window):
                         variables.currentNarrative = "text.start.reset.content"
                         variables.fixed_setting("reset")
                     case 2:
-                        if chosen[1] != -1:
-                            i18n.set("locale", langs[chosen[1]])
-                            variables.currentNarrative = "text.start.play.content"
+                        if chosen[1] == -1:
+                            continue
+                        i18n.set("locale", langs[chosen[1]])
+                        variables.currentNarrative = "text.start.play.content"
                     case 3:
                         variables.isPlaying = True
                         variables.isExit = True
@@ -167,6 +168,8 @@ def display_scene(stdscr: curses.window, scene: str):
     win.refresh()
     del win
 
+    if scene in ("title", "dead", "end"): #Ignore these
+        return
     win = stdscr.subwin(1, curses.COLS - 62, 1, 61) # This show the location's name in the heading
     win.clear()
     win.addstr(i18n.t(f"text.control.{"lake" if scene == "mirror" else scene}").upper())
@@ -389,7 +392,7 @@ def init_screen(stdscr: curses.window):
     match variables.currentNarrative:
         case "text.ending.0":
             display_scene(stdscr, "dead")
-        case _: #TODO - Add special scene for hidden ending (4 & 5)
+        case _: #TODO - See if any donors help drawing this... (in 57x22 thx)
             display_scene(stdscr, "end")
     ending: str = variables.currentNarrative.split(".")[2]
     if ending in ("1", "2", "3"):
