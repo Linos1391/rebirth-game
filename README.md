@@ -12,7 +12,7 @@
 
 ## Introduction:
 
-I made this game initially for my school project. And I think everyone should try it! I will still keep updating.
+I made this game initially for my school project. And I think everyone should try it!
 
 There are total 5 endings (2 are hidden).
 
@@ -60,4 +60,4 @@ In combat, choose either `Fight` or `Defend` or `Move` (escaping).
 
 - Refining English [`i18n`](rebirth/assets/i18n/text.en.yml) text is always welcomed.
 - If you want to add translations, feel free to add your language in [`rebirth/assets/i18n`](rebirth/assets/i18n) as a pull request. Rename as f"text.{your_lang}.yml".
-- If you want to redraw scenes or add new features, make sure to list them clearly in your pull request.
+- If you want to redraw scenes(57x22)/events(13x6) or add new features, make sure to list them clearly in your pull request.
