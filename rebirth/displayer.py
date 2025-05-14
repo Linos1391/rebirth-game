@@ -96,32 +96,57 @@ def display_start(stdscr: curses.window):
     del loc
 
     # Display the panel.
-    chosen: int = 0
+    chosen: int = [-1, -1]
+    langs: list = []
     while True:
         win.clear()
-        for i, m in enumerate(["play", "reset", "guide", "exit"]):
-            if i == chosen:
+        for i, m in enumerate(["play", "reset", "language", "exit"]):
+            if i == chosen[0]:
                 win.addstr(f"\n[X] {i18n.t(f"text.start.{m}.heading")}", curses.A_STANDOUT)
+                if i == 2 and chosen[1] != -1:
+                    cur_lang: str = i18n.get("locale")
+                    for j, n in enumerate(i18n.translations.container.keys()):
+                        i18n.set("locale", n)
+                        langs.append(n)
+                        if j == chosen[1]:
+                            win.addstr(f"\n  [X] {i18n.t("text.lang")}", curses.A_STANDOUT)
+                        else:
+                            win.addstr(f"\n  [X] {i18n.t("text.lang")}")
+                    i18n.set("locale", cur_lang)
             else:
                 win.addstr(f"\n[X] {i18n.t(f"text.start.{m}.heading")}")
         win.refresh()
 
         match stdscr.getch():
             case curses.KEY_UP:
-                if chosen != 0:
-                    chosen -= 1
+                if chosen[1] == -1 and chosen[0] > 0:
+                    chosen[0] -= 1
+                elif chosen[1] not in (-1, 0):
+                    chosen[1] -= 1
             case curses.KEY_DOWN:
-                if chosen != 3:
-                    chosen += 1
+                if chosen[1] == -1 and chosen[0] != 3:
+                    chosen[0] += 1
+                elif chosen[1] not in (-1, len(langs)-1):
+                    chosen[1] += 1
+            case curses.KEY_LEFT:
+                if chosen[0] != 2:
+                    continue
+                chosen[1] = -1
+            case curses.KEY_RIGHT:
+                if chosen[0] != 2:
+                    continue
+                if chosen[1] == -1:
+                    chosen[1] = 0
             case curses.KEY_ENTER | 10 | 13:
-                match chosen:
+                match chosen[0]:
                     case 0:
                         variables.isPlaying = True
                     case 1:
                         variables.currentNarrative = "text.start.reset.content"
                         variables.fixed_setting("reset")
                     case 2:
-                        variables.currentNarrative = "text.start.guide.content"
+                        i18n.set("locale", langs[chosen[1]])
+                        variables.currentNarrative = "text.start.play.content"
                     case 3:
                         variables.isPlaying = True
                         variables.isExit = True
@@ -183,7 +208,7 @@ def display_narrative(stdscr: curses.window):
     while True:
         match stdscr.getch():
             case curses.KEY_UP:
-                if chosen[1] == -1 and chosen[0] != 0:
+                if chosen[1] == -1 and chosen[0] > 0:
                     chosen[0] -= 1
                 elif chosen[1] not in (-1, 0):
                     chosen[1] -= 1
@@ -371,15 +396,16 @@ def init_screen(stdscr: curses.window):
     # End scene
     win = stdscr.subwin(curses.LINES - 6, curses.COLS - 62, 6, 61)
     win.clear()
-    win.addstr(f"ENDING {ending}\n\n\
-{i18n.t(variables.currentNarrative)}\n\nPress any key to continue.")
+    win.addstr(f"{i18n.t("text.ending.heading")} {ending}\n\n\
+{i18n.t(variables.currentNarrative)}\n\n{i18n.t("text.ending.continue")}")
     win.refresh()
     win.getkey()
 
     if variables.check_setting(): # Ending 4
         win = stdscr.subwin(curses.LINES - 6, curses.COLS - 62, 6, 61)
         win.clear()
-        win.addstr(f"ENDING 4\n\n{i18n.t("text.ending.4")}\n\nPress any key to continue.")
+        win.addstr(f"{i18n.t("text.ending.heading")} 4\n\n\
+{i18n.t("text.ending.4")}\n\n{i18n.t("text.ending.continue")}")
         win.refresh()
         win.getkey()
 

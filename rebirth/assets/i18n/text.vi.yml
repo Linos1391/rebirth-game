@@ -1,0 +1,130 @@
+vi:
+    lang: Tiếng Việt
+    heading:
+        health: Máu
+        time: Thời Gian
+    location:
+        bedroom:
+            first: Ngươi tỉnh dậy trong phòng ngủ… một căn phòng lạ hoắc. Ngươi không biết sao mình ở đây. Khoan… ngươi chả biết gì cả. “Tôi là ai?”, ngươi thầm nghĩ. Ngươi cũng chẳng cảm nhận được gì ngoài mùi hôi thối khủng khiếp. Qua khe cửa sổ, ngươi thấy một bờ hồ ở phía xa. Đến đó trước vậy!
+            default: Ngươi đã tỉnh giấc nơi đây, trên sàn gỗ. Ngươi không biết đây là đâu, nhưng đích thị không phải nhà của ngươi. Không nên ở đây lâu, ngươi nghĩ thầm. Vẫn còn nhiều điều để ngươi khám phá.
+        kitchen:
+            first: Từ phòng ngủ, ngươi tiến đến căn bếp. Luồng gió từ đâu, khiến thứ gì đó rơi xuống đất. Nó làm ngươi chú ý. “Nhà của ai nhỉ, bởi tờ giấy trông khá mới!” Có lẽ ngươi nên ra ngoài thật nhanh, hoặc ai đó sẽ trở về. Hoặc ngươi nên chờ đợi để họ đến và cảm ơn… Chả biết nữa. Hay là đọc tờ giấy trước, nhỉ?
+            default: Đây là phòng bếp, một nơi tuyệt vời để nghỉ ngơi. Có những hũ lọ trên bàn, mà ngươi biết mình không nên chạm vào. Có tổng cộng 3 cánh cửa dẫn đến các phòng khác nhau, gồm cả phòng ngủ người vừa rời đi. Một vào bên trong, đã bị khóa, và một ra ngoài, là cửa sau.
+            newspaper: Đây là một tờ báo. “Tuyệt đối! Trên cả tuyệt đối! Không kẻ nào dám dùng ngôn từ để tả lại điều vừa diễn ra! Các pháp sư đại tài nước ta đã triệu hồi thành công Ngươi Phương Xa, những con người đến từ thế giới khác. Có thể nói rằng chiến thắng là điều tất yếu!”, ngươi tự tóm tắt nó. Bỗng, một ý nghĩ lóe lên trong đầu ngươi. “Mình có khi nào là một Người Phương Xa không?”
+        forest:
+            first: Bên ngoài căn nhà, ngươi cũng được hít thở không khí trong lành. Cái mùi vẫn ở đây, nhưng ít nhất ngươi quên được nó. Đột nhiên, tiếng rên rỉ vang lên đâu. Một thây ma! Nó có thật sao? Thứ đó tiến đến ngươi. Ngươi chẳng có gì để phòng vệ, ngoài dùng tay không. Khoan đã, chân phải nó trông khá yếu ớt.
+            default: Thây ma đấy ngăn ngươi không thể tiến xa hơn. Giá như ngươi có thể làm gì đó với chân nó.
+            fight:
+                0: “Ha! Trượt à? Non lắm” “Grrrr.”
+                1: Ngươi bị thương, chết tiệt! Mau giải quyết nó, ra đòn đá thấp đi!
+            defend:
+                0: Ngươi chặn được đòn đánh. Ngươi cảm thấy có sức mạnh trào dâng.
+                1: Ngươi không đỡ được. “Đau.” Móng vuốt nó cào lên da mặt ngươi.
+                2: Ngươi né được dễ dàng.
+                3: Ngươi không né được, và khiến ngươi làm thương chính mình.
+                4: “Không! Không!” Ngươi không thể né kịp. Biết gì không? Ngươi không đứng dậy nổi và bị cắn hai phát.
+            after: Ngươi đã giết tên thây ma bằng tay không. Cây rừng rậm rập, nhiều đến mức không đếm nổi. Ngủ chốn này và ngươi có thể quên đi mọi thứ, ngay cả cuộc đời mình. Chờ đã, ngươi đã quên mất rồi, phải không? Tự cười. Chẳng còn gì ngươi cảm nhận được gì ngoài sự trống rỗng.
+        camp:
+            first: Căn lều trông cũ kỹ. “Những nhà mạo hiểu đã bỏ chúng lại đây.” Nhìn vào trong, ngươi tìm thấy một tờ báo và một tờ giấy ghi chú nguệch ngoạc. Có lẽ những thứ này sẽ giúp ngươi nhớ lại gì đó.
+            default: Một nơi cắm trại bị quên lãng, thứ đã từng thuộc về các mạo hiểm giả.
+            newspaper: “Chú ý, hãy mở to mắt ra và tìm kiếm! Đức Vua đã biến mất!” Đó là đầu dòng. Giá như ngươi là một vị vua. Và chỉ có một cách để kiểm chứng, là tìm đến lâu đài! Ngươi không biết lý do, nhưng ngươi tin rằng đích đến ngự nơi đó.
+            note: Tờ ghi chú được viết rất ẩu tả. “Ta không phải vua, mà là thường dân. Chỉ có sức mạnh là không ai theo kịp. Đó là lý do ta rời đi. Hỡi Chúa, con xin gửi người linh hồn mình, và làm ơn hãy giúp con thoát khỏi thế giới đau khổ này.”
+        graveyard:
+            first: Quá dũng cảm nhỉ khi dám đến đây? Sống lưng ngươi lạnh ngắt, ngươi có cảm giác bị theo dõi. Rất, rất nhiều ngôi mộ thuộc về những kẻ xấu số. Ngươi trông thấy một thây ma từ phía xa. Nên vào trong chứ? Thật là một ý tưởng tệ hại! Khi đó, tên thây ma cũng trông thấy, chạy về phía ngươi. Hành động nhanh lên! Bụng nó trông như đã thối rữa, có lẽ ngươi có thể đấm vỡ xương sườn hắn.
+            default: Mày đây rồi, thây ma! Đấm vỡ xương sườn và hắn sẽ gục xuống.
+            fight:
+                0: Ngươi kịp thời đỡ được. Thử lại và giết hắn!
+                1: Ngươi bị thương. Nó đau đấy…
+            defend:
+                0: Ngươi thành công chặn được.
+                1: “Chết tiệt.” Ngươi không đỡ được nó.
+                2: Ngươi né được. “Lêu lêu!”
+                3: Quá chậm! Nó chạm vào được ngươi.
+                4: “Không để ý luôn á… Ahhh!” Ngươi đâm vào một ngôi mộ khi đang lộn nhào.
+            after: Bấy giờ, nghĩa trang chẳng còn nguy hiểm nữa. Bầu không khí vẫn chưa thay đổi, nhưng ngươi cảm thấy bình yên. Đây sẽ là nơi ngươi được chôn vào một ngày nào đó. 
+        tomb:
+            first: Những ngôi mộ khác đều được làm bằng đá, nhưng cái này chỉ là một bãi đất. Ngươi thấy một thanh kiếm cắm trên đó, và một vương miện trên cạnh. Đó chắc chắn là Excalibur. Ngươi muốn kéo thanh Excalibur ra. Song, ngươi không thể kéo nó… Ngươi. Không. Xứng. Đáng… Đủ?
+            default: Ngôi mộ thuộc về một nhân loại đáng kính duy nhất.
+            crown: Mang nó lên, và giờ ngươi thấy mình thật ngầu.
+        lake:
+            first: Cuối cùng, ngươi đã tìm thấy hồ nước. Nhưng có tận 3 tên thây ma xuất hiện và ngăn ngươi lại. Quá nguy hiểm! Nhưng mùi thối cũng không chịu nổi được. Chiến đấu hay Bốc mùi, chọn đi! Con thứ nhất trông bình thường, nó chẳng giống như có điểm yếu nào. Con thứ hai ở giữa đầu bị nức vỡ. Con thứ ba trông như sắp ngã đến nơi. Ngươi cảm thấy có gì đó không ổn.
+            default: Đây rồi, thây ma, giờ thì chết đi! Ngươi nhớ rằng con đầu trông bình thường, con thứ có đầu bị nức vỡ, con thứ ba đi đứng loạng choạng, không vững.
+            fight:
+                0: “Mẹ mày quá béo.” “Grr?” “Tao cần đến 2 câu thoại để hoàn thành.”
+                1: Đau đấy, nhóc.
+                2: Ngươi giết được thây ma, và con tiếp theo đang tiến lại gần.
+            defend:
+                0: Ngươi đỡ được.
+                1: “Bình tĩnh!” “Grrrr!”
+                2: Ngươi né kịp thời.
+                3: “Hả?” Móng vuốt nó chạy dài trên cánh tay, hằn một đường đầy máu.
+                4: “Ừ, game hay đấy.” Ngươi lộn vào hồ nước và bị thương khi thoát ra.
+            after: Làm được rồi! Ngươi đã giết tất cả thây ma bằng tay không. Giờ bờ hồ là của mình ngươi.
+            clean: Cuối cùng, ngươi có thể thoát khỏi cái mùi này! Tiến lại gần và làm sạch cơ thể, cho đến khi ngươi nhìn thấy mặt mình. Quái lạ! Đó là một cái đầu lâu với một chút da còn sót lại. Kinh tởm! Ngươi… đã chết.
+        road:
+            first: Cuộc chiến ban nãy khá tốn sức, ngươi không nghĩ mình có thể thắng thêm nữa. Giá như ai đó đến và giúp ngươi. “Thế giới này chán ngắt!” một thiếu niên la lên. “Họ bảo ta là Người Phương Xa? Nực cười thật!” Ngươi nhìn vào đường lớn, một nhóm nam thanh nữ tú đang di chuyển. Thực sự là có gì đó rất không ổn. Ngươi có nên đi và gặp họ không?
+            default: Đó là một nhóm Người Phương Xa. Ngươi không biết mình có nên đi gặp họ không.
+            greet: “Cái gì?” Tên mặc giáp trụ rút thanh gươm và nhìn chằm chằm vào ngươi ”Chết đi! Quái vật! Ahhhh!”
+            fight:
+                0: Ngươi thành công đánh hắn một nhát.
+                1: “Đau”. Ngươi bị thương.
+                2: “Về sau đi, để tôi.” Một Người Phương Xa khác tiến đến.
+            defend:
+                0: “Tôi không muốn chiến đấu!” “Ngừng gào mồm đi, tên quái vật!”
+                1: Ngươi cố để đỡ đòn, song thất bại.
+                2: “Nghe đi!” Có vẻ như bọn họ không quan tâm ngươi đang nói gì.
+                3: Ngươi lộn nhào, nhưng không nhanh đủ.
+                4: “Tao ghét mày, bản thân ạ.” Ngươi đâm vào gốc cây.
+        castle:
+            first: Sau một hành trình dài, ngươi đã ở đây, tại lâu đài. Ngươi không biết vì cớ gì ngươi ở đây, nhưng ngươi muốn. Như thể có ai đó đã kéo ngươi đến. Trước cổng, một bóng người với khuôn mặt che khuất nhìn ngươi. Vì lý do nào đó, ngươi cảm nhận một mùi hương dịu quen thuộc. “Ngươi là thứ gì?” người đó hỏi tôi với chất giọng êm ái.
+    control:
+        inspect: Kiểm Tra
+        note: Đọc Ghi Chú
+        newspaper: Đọc Tờ Báo
+        clean: Vệ Sinh Cơ Thể
+        crown: Mang Vương Miện
+        outsiders: Chào Hỏi
+        opt_unknown: Tôi Không Biết
+        opt_king: Đức Vua
+        opt_outsider: Người Phương Xa
+        opt_zombie: Thây Ma
+        #===
+        move: Di Chuyển
+        bedroom: Phòng Ngủ
+        kitchen: Căn Bếp
+        forest: Cánh Rừng
+        camp: Lều Bỏ Hoang
+        graveyard: Nghĩa Trang
+        tomb: Mộ Anh Hùng
+        lake: Hồ Nước
+        road: Đường Chính
+        castle: Kinh Đô
+        #===
+        fight: Chiến Đấu
+        jab: Đấm Mạnh
+        uppercut: Móc Ngược
+        kick: Đá Thấp
+        #===
+        defend: Phòng Thủ
+        block: Đỡ
+        dodge: Né
+    start:
+        play:
+            heading: Chơi
+            content: Chào mừng đến với Rebirth, một tựa game Python ASCII làm bởi Linos. Dùng phím mũi tên để chọn. Bấm `Enter` để xác nhận.
+        reset:
+            heading: Tải Lại
+            content: Thư mục cài đặt đã được thiết lập lại. Giờ bạn có thể trải nghiệm lại từ đầu.
+        language:
+            heading: Ngôn Ngữ
+        exit:
+            heading: Thoát
+    ending:
+        heading: KẾT
+        continue: Nhấn bất kỳ phím nào để tiếp tục
+        0: Ngươi đã chết. Không ngoại lệ. Ngươi đẫ chết.
+        1: Không biết nữa. Ngươi chỉ muốn đến đây càng nhanh càng tốt. Ngươi không biết. Thấy ngươi như thế, bóng người đó nhẹ nhàng đâm xuyên tim ngươi. “Làm ơn, lần sau hãy trả lời tôi.”
+        2: Phải, ngươi nghĩ vậy. Không thể nào có chuyện ngươi sai được. Cho đến khi nhận ra, ngươi đang chết dần. Ngươi đã bị đâm, và ngã xuống nền đất. “Không”, cô ấy đáp.
+        3: “Tôi là… một thây ma.” Người ấy lao về phía ngươi, nhanh đến mức khiến gió cởi đi mũ trùm đầu. “Ít nhất anh đã biết.” Con dao găm trên tay đâm vào ngươi. “Tại sao…?”  “Anh rồi sẽ hồi sinh trở lại. Tin tôi, và đi tìm con người thật của mình.”
+        4: Ngươi tỉnh dậy. Đó là một giấc ngủ dài. “Dậy rồi à?” Một thiếu nữ ngồi cạnh ngươi, mỉm cười. “Giờ thì! Anh là ai?” “Thây ma.” “Không phải, ngốc ạ!” Cô ấy dẫn ngươi ra ngoài, đến một ngôi mộ với thanh kiếm cắm lên đó. “Kéo nó đi.” Cô yêu cầu. Khi ngươi kéo nó ra, một lớp bụi trắng sáng bao phủ ngươi và cô. “Hai linh hồn chia cắt đã tìm đường trở về.” Ngươi dần mất đi ý thức.
+        5: “Tôi đã làm gì thế này…” Ngươi giết tất cả ba người họ, những kẻ xưng danh anh hùng. Giờ đây, thứ còn lại đợi chờ là sự tàn lụi của vương quốc. Một bóng người phía sau ngươi, mang áo choàng. Cô ta tháo mũ trùm, nhìn vào ngươi trong cơn giận dữ. Cô ta quá nhanh, đâm ngươi trong tức khắc. Ngươi đang chết đi. Thanh kiếm ấy đen ngòm. Một thanh Excalibur màu đen trên tay cô ấy.
