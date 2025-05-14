@@ -1,22 +1,22 @@
-                                                         
-                              X                          
-                             XXX                         
-          X                   X                     X    
-                   X          X                          
- X                         XXXXXXX                       
-                         XXXXXXXXXXX                     
-                        XX   XXX   XX                    
-                             XXX               X         
-                             XXX                         
-                             XXX                         
-        X                    XXX                         
-                             XXX                         
-                             XXX                         
-                         XXXXXXXXXXX                     
-                   XXXXXXXXXXXXXXXXXXXXXXX      X        
-                  XXXXXXXXXXXXXXXXXXXXXXXXX              
-                   XXXXXXXXXXXXXXXXXXXXXXX               
-     X                   XXXXXXXXXXX                     
+                              _                          
+                             / \                         
+                             \_/                         
+          ,                  | |                    ,    
+                   ,         | |                         
+,,                        ___|_|____                     
+                         / _______ \                     
+                        /_/ |   | \_\                    
+                            |   |              ,         
+                            |   |                        
+                            |   |                        
+        ,                   |   |                        
+                            |   |                        
+                          __|___|__                      
+                    _____/█████████\_____                
+                   /█████████████████████\      ,        
+                  |███████████████████████|              
+                   \█████████████████████/               
+     ,                   \█████████/                     
                                                          
                                                          
                                                          
