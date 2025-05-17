@@ -18,7 +18,7 @@ def _heading_health(stdscr: curses.window):
 
     win = stdscr.subwin(1, curses.COLS - 62, 2, 61)
     win.clear()
-    win.addstr(f"{i18n.t("text.heading.health")}: {variables.currentPlayerHealth*"█"}")
+    win.addstr(f"{i18n.t("text.heading.health")}: {variables.currentPlayerHealth*"O"}")
     win.refresh()
     del win
 
@@ -97,8 +97,8 @@ def display_start(stdscr: curses.window):
 
     # Display the panel.
     chosen: int = [-1, -1]
-    langs: list = []
     while True:
+        langs: list = []
         win.clear()
         for i, m in enumerate(["play", "reset", "language", "exit"]):
             if i == chosen[0]:
@@ -168,30 +168,40 @@ def display_scene(stdscr: curses.window, scene: str):
     win.refresh()
     del win
 
-    if scene in ("title", "dead", "end"): #Ignore these
-        return
     win = stdscr.subwin(1, curses.COLS - 62, 1, 61) # This show the location's name in the heading
     win.clear()
-    win.addstr(i18n.t(f"text.control.{"lake" if scene == "mirror" else scene}").upper())
+    if scene in ("title", "dead", "end"): #Ignore these
+        count: int = 0
+        for achieved in variables.get_setting().values():
+            if achieved:
+                count += 1
+        text: str = f"{count}/5 {i18n.t("text.ending.heading")}"
+    else:
+        text: str = i18n.t(f"text.control.{"lake" if scene == "mirror" else scene}").upper()
+    win.addstr(text)
     win.refresh()
     del win
 
+def display_paused_narrative(stdscr: curses.window, ending: str | None = None):
+    """Pause for special narrative."""
+    win = stdscr.subwin(curses.LINES - 6, curses.COLS - 62, 6, 61)
+    win.clear()
+    if ending:
+        win.addstr(f"{i18n.t("text.ending.heading")} {ending}\n\n")
+    win.addstr(f"{i18n.t(variables.currentNarrative)}\n\n{i18n.t("text.ending.continue")}")
+    win.refresh()
+    win.getkey()
+
 def display_narrative(stdscr: curses.window):
-    """Create the narrative screen on the lower right side.
-
-    Args:
-        nar_key (str): narrative key of text (used for i18n).
-        control (dict): list of available actions.
-    """
+    """Create the narrative screen on the lower right side."""
     nar_key: str = variables.currentNarrative
-
     _, _, cur_scene, _event = nar_key.split(".", 3)
-    _event = _event.split(".")[0]
-    # Special event
-    controls: dict = variables.CONTROL.get(
-        f"{cur_scene}_{_event}" if _event in ("fight", "after", "clean", "greet") else cur_scene
-    )
+
+    controls: dict = variables.control_get(cur_scene, _event.split(".")[0])
+    del _event
     if "inspect" in list(controls.keys()):
+        if controls.get("inspect")[0] in ("opt_unknown", "opt_king", "opt_outsider", "opt_zombie"):
+            controls.update({"inspect": ["cloak"]}) # Return to normal.
         _event_panel(stdscr, controls.get("inspect"))
     elif variables.ENEMY.get(cur_scene):
         _event_panel(stdscr, variables.ENEMY.get(cur_scene)[0], True)
@@ -204,42 +214,32 @@ def display_narrative(stdscr: curses.window):
     loc = win.getyx()
     win = stdscr.subwin(curses.LINES-6-loc[0], curses.COLS-62-loc[1], 6+loc[0], 61)
     del loc
+
     # Display the control panel.
     chosen: list[int] = [-1, -1]
-    _control_panel(win, controls, chosen)
-
-    # Control system for the panel
     while True:
+        # Display the control panel.
+        _control_panel(win, controls, chosen)
         match stdscr.getch():
             case curses.KEY_UP:
                 if chosen[1] == -1 and chosen[0] > 0:
                     chosen[0] -= 1
                 elif chosen[1] not in (-1, 0):
                     chosen[1] -= 1
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_DOWN:
                 if chosen[1] == -1 and chosen[0] != len(controls)-1:
                     chosen[0] += 1
                 elif chosen[1] not in (-1, len(list(controls.values())[chosen[0]])-1):
                     chosen[1] += 1
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_LEFT:
                 if chosen[0] == -1:
                     continue
-
                 chosen[1] = -1
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_RIGHT:
                 if chosen[0] == -1:
                     continue
-
                 if chosen[1] == -1:
                     chosen[1] = 0
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_ENTER | 10 | 13: # Also think of `\n` and `\r`
                 if chosen[1] == -1:
                     continue
@@ -337,6 +337,7 @@ f"text.location.{variables.currentNarrative.split(".")[2]}.{event}"
                         _event_panel(stdscr, variables.ENEMY.get(cur_scene)[0], True)
                         break
                     case "defend":
+                        passed: bool = False
                         match list(controls.values())[chosen[0]][chosen[1]]:
                             case "block":
                                 if randint(0, 1): # 50% hit
@@ -344,14 +345,32 @@ f"text.location.{variables.currentNarrative.split(".")[2]}.{event}"
                                     _heading_health(stdscr)
                                 else:
                                     variables.currentNarrative=f"text.location.{cur_scene}.defend.0"
+                                    passed = True
                             case "dodge":
                                 if randint(0, 3): # 25% dodge
                                     variables.currentNarrative=f"text.location.{cur_scene}.defend.2"
+                                    passed = True
                                 elif randint(0, 10): # 90% got hit once
                                     variables.currentNarrative=f"text.location.{cur_scene}.defend.3"
                                 else: # Bye 2 health.
                                     variables.currentNarrative=f"text.location.{cur_scene}.defend.4"
                                     _heading_health(stdscr)
+                        if passed and not randint(0, 20): # 5% counter attack when success.
+                            variables.currentEnemyHealth = 0
+                            variables.currentNarrative = f"text.location.{cur_scene}.defend.5"
+                            display_paused_narrative(stdscr)
+
+                            if variables.ENEMY.get(cur_scene)[0][0] == "bow": # For special ending
+                                variables.currentNarrative = "text.ending.5"
+                                variables.isPlaying = False
+                                break
+                            variables.ENEMY.get(cur_scene)[0].pop(0)
+                            variables.ENEMY.get(cur_scene)[1].pop(0)
+                            if not variables.ENEMY.get(cur_scene)[0]: # Killed all.
+                                variables.currentNarrative = f"text.location.{cur_scene}.after"
+                            else:
+                                variables.currentNarrative = f"text.location.{cur_scene}.fight.2"
+
                         display_scene(stdscr, cur_scene)
                         _event_panel(stdscr, variables.ENEMY.get(cur_scene)[0], True)
                         break
@@ -383,35 +402,34 @@ def init_screen(stdscr: curses.window):
     # Update contents.
     display_scene(stdscr, "bedroom") # Show the bedroom scene and name of the location.
     _heading_health(stdscr) # Display health
-    Thread(target=_heading_time, args=[stdscr]).start() # Make the time run
+    Thread(target=_heading_time, args=[stdscr]).start()
     variables.currentNarrative = "text.location.bedroom.first"
     while variables.isPlaying:
         display_narrative(stdscr)
 
     # Give ending.
-    match variables.currentNarrative:
-        case "text.ending.0":
-            display_scene(stdscr, "dead")
-        case _: #TODO - See if any donors help drawing this... (in 57x22 thx)
-            display_scene(stdscr, "end")
     ending: str = variables.currentNarrative.split(".")[2]
-    if ending in ("1", "2", "3"):
+    if ending != 0:
         variables.fixed_setting(ending)
+    match ending:
+        case "0":
+            display_scene(stdscr, "dead")
+        case _: #TODO - See if any donors help drawing this...
+            display_scene(stdscr, "end")
     # End scene
-    win = stdscr.subwin(curses.LINES - 6, curses.COLS - 62, 6, 61)
-    win.clear()
-    win.addstr(f"{i18n.t("text.ending.heading")} {ending}\n\n\
-{i18n.t(variables.currentNarrative)}\n\n{i18n.t("text.ending.continue")}")
-    win.refresh()
-    win.getkey()
-
     if variables.check_setting(): # Ending 4
-        win = stdscr.subwin(curses.LINES - 6, curses.COLS - 62, 6, 61)
-        win.clear()
-        win.addstr(f"{i18n.t("text.ending.heading")} 4\n\n\
-{i18n.t("text.ending.4")}\n\n{i18n.t("text.ending.continue")}")
-        win.refresh()
-        win.getkey()
+        variables.fixed_setting("4")
+        variables.currentNarrative = "text.ending.4.0"
+        display_scene(stdscr, "bedroom")
+        display_paused_narrative(stdscr, "4")
+        variables.currentNarrative = "text.ending.4.1"
+        display_scene(stdscr, "tomb")
+        display_paused_narrative(stdscr, "4")
+        variables.currentNarrative = "text.ending.4.2"
+        display_scene(stdscr, "end")
+        display_paused_narrative(stdscr, "4")
+    else:
+        display_paused_narrative(stdscr, None if ending == 0 else ending)
 
 def end_screen():
     """End everything."""
