@@ -189,13 +189,10 @@ def display_paused_narrative(stdscr: curses.window, ending: str | None = None):
 def display_narrative(stdscr: curses.window):
     """Create the narrative screen on the lower right side."""
     nar_key: str = variables.currentNarrative
-
     _, _, cur_scene, _event = nar_key.split(".", 3)
-    _event = _event.split(".")[0]
-    # Special event
-    controls: dict = variables.CONTROL.get(
-        f"{cur_scene}_{_event}" if _event in ("fight", "after", "clean", "greet") else cur_scene
-    )
+
+    controls: dict = variables.control_get(cur_scene, _event.split(".")[0])
+    del _event
     if "inspect" in list(controls.keys()):
         if controls.get("inspect")[0] in ("opt_unknown", "opt_king", "opt_outsider", "opt_zombie"):
             controls.update({"inspect": ["cloak"]}) # Return to normal.
@@ -211,42 +208,32 @@ def display_narrative(stdscr: curses.window):
     loc = win.getyx()
     win = stdscr.subwin(curses.LINES-6-loc[0], curses.COLS-62-loc[1], 6+loc[0], 61)
     del loc
+
     # Display the control panel.
     chosen: list[int] = [-1, -1]
-    _control_panel(win, controls, chosen)
-
-    # Control system for the panel
     while True:
+        # Display the control panel.
+        _control_panel(win, controls, chosen)
         match stdscr.getch():
             case curses.KEY_UP:
                 if chosen[1] == -1 and chosen[0] > 0:
                     chosen[0] -= 1
                 elif chosen[1] not in (-1, 0):
                     chosen[1] -= 1
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_DOWN:
                 if chosen[1] == -1 and chosen[0] != len(controls)-1:
                     chosen[0] += 1
                 elif chosen[1] not in (-1, len(list(controls.values())[chosen[0]])-1):
                     chosen[1] += 1
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_LEFT:
                 if chosen[0] == -1:
                     continue
-
                 chosen[1] = -1
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_RIGHT:
                 if chosen[0] == -1:
                     continue
-
                 if chosen[1] == -1:
                     chosen[1] = 0
-                # Display the control panel.
-                _control_panel(win, controls, chosen)
             case curses.KEY_ENTER | 10 | 13: # Also think of `\n` and `\r`
                 if chosen[1] == -1:
                     continue
@@ -409,7 +396,7 @@ def init_screen(stdscr: curses.window):
     # Update contents.
     display_scene(stdscr, "bedroom") # Show the bedroom scene and name of the location.
     _heading_health(stdscr) # Display health
-    # Thread(target=_heading_time, args=[stdscr]).start() # Make the time run #TODO
+    Thread(target=_heading_time, args=[stdscr]).start()
     variables.currentNarrative = "text.location.bedroom.first"
     while variables.isPlaying:
         display_narrative(stdscr)

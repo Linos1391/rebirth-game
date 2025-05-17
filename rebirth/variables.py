@@ -39,11 +39,6 @@ CONTROL: dict = {
         "fight": ["jab", "uppercut", "kick"],
         "defend": ["block", "dodge"],
     },
-    "forest_fight": {
-        "move": ["kitchen"],
-        "fight": ["jab", "uppercut", "kick"],
-        "defend": ["block", "dodge"],
-    },
     "forest_after": {
         "move": ["kitchen", "camp", "graveyard", "lake"],
     },
@@ -56,11 +51,6 @@ CONTROL: dict = {
         "fight": ["jab", "uppercut", "kick"],
         "defend": ["block", "dodge"],
     },
-    "graveyard_fight": {
-        "move": ["forest"],
-        "fight": ["jab", "uppercut", "kick"],
-        "defend": ["block", "dodge"],
-    },
     "graveyard_after": {
         "move": ["forest", "tomb"],
         },
@@ -69,11 +59,6 @@ CONTROL: dict = {
         "move": ["graveyard"],
     },
     "lake": {
-        "move": ["forest"],
-        "fight": ["jab", "uppercut", "kick"],
-        "defend": ["block", "dodge"],
-    },
-    "lake_fight": {
         "move": ["forest"],
         "fight": ["jab", "uppercut", "kick"],
         "defend": ["block", "dodge"],
@@ -96,9 +81,6 @@ CONTROL: dict = {
     "road_fight": {
         "fight": ["jab", "uppercut", "kick"],
         "defend": ["block", "dodge"],
-    },
-    "road_after": {
-        "move": ["lake", "castle"],    
     },
     "castle": {
         "inspect": ["cloak"],
@@ -134,3 +116,13 @@ def fixed_setting(ending: str):
     f = open(path, mode="w", encoding="utf-8")
     json.dump(data, f, indent=4)
     f.close()
+
+def control_get(scene: str, event: str | None = None) -> dict:
+    """A better get."""
+    if (event == "greet") or (scene == "road" and event == "defend"):
+        return CONTROL.get(f"{scene}_fight")
+    elif (event in (None, "first", "default", "defend")) or \
+            (scene in ("forest", "lake", "graveyard") and event == "fight"):
+        return CONTROL.get(scene)
+    else:
+        return CONTROL.get(f"{scene}_{event}")

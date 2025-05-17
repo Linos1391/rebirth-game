@@ -67,7 +67,7 @@ en:
         road:
             first: That fight earlier was tough, you don’t think you can win anymore fights. If only someone comes up and helps you. “This world sucks!” said a boy. “They say we are outsiders? How ridiculous!”. You take a look at the main road, a group of boys and girls are walking down. You have a really bad feeling about this. Should you really go and meet them?
             default: That is a group of Outsiders. You don’t know if you should greet them or not.
-            greet: “What?” The tanker gets his sword out and stares at you. “Die! Monster! Ahhhh!”
+            greet: “What?” The tanker gets his sword out and stares at you. “Die! Monster! Ahhhh!” You don't think you can run away.
             fight:
                 0: You successfully land a hit on him.
                 1: “Ouch”. You got hurted.
@@ -76,7 +76,7 @@ en:
                 0: “I don’t want to fight!” “Stop growling, you little zombie!”
                 1: You tried to block, but unfortunately failed.
                 2: “Listen!” It seems like they don’t really care what you are saying.
-                3: You’re rolling, but fast enough.
+                3: You’re rolling, but not fast enough.
                 4: “I hate myself.” You hit a tree.
                 5: “This!” With a great determination, you managed to counter-attack.
         castle:

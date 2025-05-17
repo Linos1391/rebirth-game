@@ -67,7 +67,7 @@ vi:
         road:
             first: Cuộc chiến ban nãy khá tốn sức, ngươi không nghĩ mình có thể thắng thêm nữa. Giá như ai đó đến và giúp ngươi. “Thế giới này chán ngắt!” một thiếu niên la lên. “Họ bảo ta là Người Phương Xa? Nực cười thật!” Ngươi nhìn vào đường lớn, một nhóm nam thanh nữ tú đang di chuyển. Thực sự là có gì đó rất không ổn. Ngươi có nên đi và gặp họ không?
             default: Đó là một nhóm Người Phương Xa. Ngươi không biết mình có nên đi gặp họ không.
-            greet: “Cái gì?” Tên mặc giáp trụ rút thanh gươm và nhìn chằm chằm vào ngươi ”Chết đi! Quái vật! Ahhhh!”
+            greet: “Cái gì?” Tên mặc giáp trụ rút thanh gươm và nhìn chằm chằm vào ngươi ”Chết đi! Quái vật! Ahhhh!” Ngươi không nghĩ mình có khả năng chạy thoát.
             fight:
                 0: Ngươi thành công đánh hắn một nhát.
                 1: “Đau”. Ngươi bị thương.
