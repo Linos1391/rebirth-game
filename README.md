@@ -52,7 +52,7 @@ Use arrow keys to choose options. Then press `Enter` to confirm.
 
 In combat, choose either `Fight` or `Defend` or `Move` (escaping).
 - `Fight`: If you choose the right style, you can one hit your enemy.
-- `Defend`: There are two options `Block` and `Dodge`. `Block` has 50% success. `Dodge` has 75% success, but when failed, has 10% lose 2hp.
+- `Defend`: There are two options `Block` and `Dodge`. `Block` has 50% success. `Dodge` has 75% success, but when failed, has 10% lose 2hp. In both ways, when success, you have 5% counter-attack (one shot your enemy).
 
 <br>
 
