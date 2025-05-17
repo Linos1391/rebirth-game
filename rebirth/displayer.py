@@ -168,11 +168,17 @@ def display_scene(stdscr: curses.window, scene: str):
     win.refresh()
     del win
 
-    if scene in ("title", "dead", "end"): #Ignore these
-        return
     win = stdscr.subwin(1, curses.COLS - 62, 1, 61) # This show the location's name in the heading
     win.clear()
-    win.addstr(i18n.t(f"text.control.{"lake" if scene == "mirror" else scene}").upper())
+    if scene in ("title", "dead", "end"): #Ignore these
+        count: int = 0
+        for achieved in variables.get_setting().values():
+            if achieved:
+                count += 1
+        text: str = f"{count}/5 {i18n.t("text.ending.heading")}"
+    else:
+        text: str = i18n.t(f"text.control.{"lake" if scene == "mirror" else scene}").upper()
+    win.addstr(text)
     win.refresh()
     del win
 
@@ -402,16 +408,17 @@ def init_screen(stdscr: curses.window):
         display_narrative(stdscr)
 
     # Give ending.
-    match variables.currentNarrative:
-        case "text.ending.0":
+    ending: str = variables.currentNarrative.split(".")[2]
+    if ending != 0:
+        variables.fixed_setting(ending)
+    match ending:
+        case "0":
             display_scene(stdscr, "dead")
         case _: #TODO - See if any donors help drawing this...
             display_scene(stdscr, "end")
-    ending: str = variables.currentNarrative.split(".")[2]
-    if ending in ("1", "2", "3"):
-        variables.fixed_setting(ending)
     # End scene
     if variables.check_setting(): # Ending 4
+        variables.fixed_setting("4")
         variables.currentNarrative = "text.ending.4.0"
         display_scene(stdscr, "bedroom")
         display_paused_narrative(stdscr, "4")
@@ -422,7 +429,7 @@ def init_screen(stdscr: curses.window):
         display_scene(stdscr, "end")
         display_paused_narrative(stdscr, "4")
     else:
-        display_paused_narrative(stdscr, ending)
+        display_paused_narrative(stdscr, None if ending == 0 else ending)
 
 def end_screen():
     """End everything."""

@@ -94,26 +94,26 @@ REQUIREMENT: dict = {
 }
 
 # Method
-def check_setting() -> bool:
-    """Check if all endings have achieved."""
+def get_setting() -> dict:
+    """Get data."""
     f = open(os.path.join(prepare.PROJECT, "assets", "setting.json"), mode="r", encoding="utf-8")
     data: dict = json.load(f)
     f.close()
-    return all(data.values())
+    return data
+
+def check_setting() -> bool:
+    """Check if all endings have achieved."""
+    data: dict = get_setting()
+    return all(list(data.values())[:3])
 
 def fixed_setting(ending: str):
     """One has to do the work, so I choose you, Pikachu!"""
-    path: str = os.path.join(prepare.PROJECT, "assets", "setting.json")
-
-    f = open(path, mode="r", encoding="utf-8")
-    data: dict = json.load(f)
-    f.close()
-
+    data: dict = get_setting()
     if ending == "reset":
-        data = {"1": False, "2": False, "3": False}
+        data = {"1": False, "2": False, "3": False, "4": False, "5": False}
     else:
         data.update({ending: True})
-    f = open(path, mode="w", encoding="utf-8")
+    f = open(os.path.join(prepare.PROJECT, "assets", "setting.json"), mode="w", encoding="utf-8")
     json.dump(data, f, indent=4)
     f.close()
 
@@ -121,7 +121,7 @@ def control_get(scene: str, event: str | None = None) -> dict:
     """A better get."""
     if (event == "greet") or (scene == "road" and event == "defend"):
         return CONTROL.get(f"{scene}_fight")
-    elif (event in (None, "first", "default", "defend")) or \
+    elif (event in (None, "first", "default", "defend", "newspaper", "note", "crown")) or \
             (scene in ("forest", "lake", "graveyard") and event == "fight"):
         return CONTROL.get(scene)
     else:
