@@ -23,6 +23,7 @@ vi:
                 2: Ngươi né được dễ dàng.
                 3: Ngươi không né được, và khiến ngươi làm thương chính mình.
                 4: “Không! Không!” Ngươi không thể né kịp. Biết gì không? Ngươi không đứng dậy nổi và bị cắn hai phát.
+                5: Ngươi nắm lấy cơ hội và phản công.
             after: Ngươi đã giết tên thây ma bằng tay không. Cây rừng rậm rập, nhiều đến mức không đếm nổi. Ngủ chốn này và ngươi có thể quên đi mọi thứ, ngay cả cuộc đời mình. Chờ đã, ngươi đã quên mất rồi, phải không? Tự cười. Chẳng còn gì ngươi cảm nhận được gì ngoài sự trống rỗng.
         camp:
             first: Căn lều trông cũ kỹ. “Những nhà mạo hiểu đã bỏ chúng lại đây.” Nhìn vào trong, ngươi tìm thấy một tờ báo và một tờ giấy ghi chú nguệch ngoạc. Có lẽ những thứ này sẽ giúp ngươi nhớ lại gì đó.
@@ -41,6 +42,7 @@ vi:
                 2: Ngươi né được. “Lêu lêu!”
                 3: Quá chậm! Nó chạm vào được ngươi.
                 4: “Không để ý luôn á… Ahhh!” Ngươi đâm vào một ngôi mộ khi đang lộn nhào.
+                5: Với phải xạ sắc bén, ngươi giết được tên thây ma.
             after: Bấy giờ, nghĩa trang chẳng còn nguy hiểm nữa. Bầu không khí vẫn chưa thay đổi, nhưng ngươi cảm thấy bình yên. Đây sẽ là nơi ngươi được chôn vào một ngày nào đó. 
         tomb:
             first: Những ngôi mộ khác đều được làm bằng đá, nhưng cái này chỉ là một bãi đất. Ngươi thấy một thanh kiếm cắm trên đó, và một vương miện trên cạnh. Đó chắc chắn là Excalibur. Ngươi muốn kéo thanh Excalibur ra. Song, ngươi không thể kéo nó… Ngươi. Không. Xứng. Đáng… Đủ?
@@ -59,6 +61,7 @@ vi:
                 2: Ngươi né kịp thời.
                 3: “Hả?” Móng vuốt nó chạy dài trên cánh tay, hằn một đường đầy máu.
                 4: “Ừ, game hay đấy.” Ngươi lộn vào hồ nước và bị thương khi thoát ra.
+                5: “Chính lúc này!” Ngươi xoay xở xuyên thủng cơ thể nó.
             after: Làm được rồi! Ngươi đã giết tất cả thây ma bằng tay không. Giờ bờ hồ là của mình ngươi.
             clean: Cuối cùng, ngươi có thể thoát khỏi cái mùi này! Tiến lại gần và làm sạch cơ thể, cho đến khi ngươi nhìn thấy mặt mình. Quái lạ! Đó là một cái đầu lâu với một chút da còn sót lại. Kinh tởm! Ngươi… đã chết.
         road:
@@ -75,6 +78,7 @@ vi:
                 2: “Nghe đi!” Có vẻ như bọn họ không quan tâm ngươi đang nói gì.
                 3: Ngươi lộn nhào, nhưng không nhanh đủ.
                 4: “Tao ghét mày, bản thân ạ.” Ngươi đâm vào gốc cây.
+                5: “Ngay đây!” Với lòng kiên định, ngươi đã phản công xuất sắc.
         castle:
             first: Sau một hành trình dài, ngươi đã ở đây, tại lâu đài. Ngươi không biết vì cớ gì ngươi ở đây, nhưng ngươi muốn. Như thể có ai đó đã kéo ngươi đến. Trước cổng, một bóng người với khuôn mặt che khuất nhìn ngươi. Vì lý do nào đó, ngươi cảm nhận một mùi hương dịu quen thuộc. “Ngươi là thứ gì?” người đó hỏi tôi với chất giọng êm ái.
     control:
@@ -126,5 +130,8 @@ vi:
         1: Không biết nữa. Ngươi chỉ muốn đến đây càng nhanh càng tốt. Ngươi không biết. Thấy ngươi như thế, bóng người đó nhẹ nhàng đâm xuyên tim ngươi. “Làm ơn, lần sau hãy trả lời tôi.”
         2: Phải, ngươi nghĩ vậy. Không thể nào có chuyện ngươi sai được. Cho đến khi nhận ra, ngươi đang chết dần. Ngươi đã bị đâm, và ngã xuống nền đất. “Không”, cô ấy đáp.
         3: “Tôi là… một thây ma.” Người ấy lao về phía ngươi, nhanh đến mức khiến gió cởi đi mũ trùm đầu. “Ít nhất anh đã biết.” Con dao găm trên tay đâm vào ngươi. “Tại sao…?”  “Anh rồi sẽ hồi sinh trở lại. Tin tôi, và đi tìm con người thật của mình.”
-        4: Ngươi tỉnh dậy. Đó là một giấc ngủ dài. “Dậy rồi à?” Một thiếu nữ ngồi cạnh ngươi, mỉm cười. “Giờ thì! Anh là ai?” “Thây ma.” “Không phải, ngốc ạ!” Cô ấy dẫn ngươi ra ngoài, đến một ngôi mộ với thanh kiếm cắm lên đó. “Kéo nó đi.” Cô yêu cầu. Khi ngươi kéo nó ra, một lớp bụi trắng sáng bao phủ ngươi và cô. “Hai linh hồn chia cắt đã tìm đường trở về.” Ngươi dần mất đi ý thức.
+        4:
+            0: Ngươi tỉnh dậy. Đó là một giấc ngủ dài. “Dậy rồi à?” Một thiếu nữ ngồi cạnh ngươi, mỉm cười. “Giờ thì! Anh là ai?” “Thây ma.”
+            1: “Không phải, ngốc ạ!” Cô ấy dẫn ngươi ra ngoài, đến một ngôi mộ với thanh kiếm cắm lên đó. “Kéo nó đi.” Cô yêu cầu. Khi ngươi kéo nó ra, một lớp bụi trắng sáng bao phủ ngươi và cô.
+            2: “Hai linh hồn chia cắt đã tìm đường trở về.” Ngươi dần mất đi ý thức.
         5: “Tôi đã làm gì thế này…” Ngươi giết tất cả ba người họ, những kẻ xưng danh anh hùng. Giờ đây, thứ còn lại đợi chờ là sự tàn lụi của vương quốc. Một bóng người phía sau ngươi, mang áo choàng. Cô ta tháo mũ trùm, nhìn vào ngươi trong cơn giận dữ. Cô ta quá nhanh, đâm ngươi trong tức khắc. Ngươi đang chết đi. Thanh kiếm ấy đen ngòm. Một thanh Excalibur màu đen trên tay cô ấy.
