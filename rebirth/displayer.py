@@ -18,7 +18,7 @@ def _heading_health(stdscr: curses.window):
 
     win = stdscr.subwin(1, curses.COLS - 62, 2, 61)
     win.clear()
-    win.addstr(f"{i18n.t("text.heading.health")}: {variables.currentPlayerHealth*"█"}")
+    win.addstr(f"{i18n.t("text.heading.health")}: {variables.currentPlayerHealth*"O"}")
     win.refresh()
     del win
 
@@ -405,7 +405,7 @@ def init_screen(stdscr: curses.window):
     match variables.currentNarrative:
         case "text.ending.0":
             display_scene(stdscr, "dead")
-        case 1 | 2 | 3 | 5: #TODO - See if any donors help drawing this...
+        case _: #TODO - See if any donors help drawing this...
             display_scene(stdscr, "end")
     ending: str = variables.currentNarrative.split(".")[2]
     if ending in ("1", "2", "3"):
